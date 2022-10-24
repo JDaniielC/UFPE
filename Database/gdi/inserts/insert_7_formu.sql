@@ -1,8 +1,11 @@
 DECLARE begin
   FillTernary;
+  FillTernary;
   FillRecep;
   FillAgendamento;
+  FillAgendamento;
   FillBeneficio; 
+  FillBeneficio;
 end;
 /
 
