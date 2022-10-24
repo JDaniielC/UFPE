@@ -102,3 +102,25 @@ order by QTD DESC
 SELECT nome FROM paciente p
 WHERE not exists (SELECT f.cpf FROM funcionario f
                 WHERE p.cpf = f.cpf)
+                
+-- empresa tercerizada que estao tendo servico sendo realizzado
+select cnpj, razao_social
+from empresa_terceirizada
+where exists(select 1
+from servico
+where servico.cnpj = empresa_terceirizada.cnpj);
+
+-- clinicas que não estao tendo servico sendo realizzado
+select ID, razao_social
+from clinica
+where not exists(select 1
+from servico
+where servico.id_clinica = clinica.ID);
+
+
+--contratos que tem valor maior que 5 mil
+select cod, valor
+from contrato
+where exists(select 1
+from servico
+where contrato.cod = servico.cod and valor > 5000)
