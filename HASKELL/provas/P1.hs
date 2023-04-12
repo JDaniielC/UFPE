@@ -84,6 +84,11 @@ data Grupos = Grupo Char Time Time Time Time
   Grupo D: Argentina, Croacia, Islandia,
   Nigeria.
 -}
+
+classificados :: Grupo -> [Jogo] -> (Time, Time)
+classificados 
+
+
 {-
 type TeamPoint = (Time, Int)
 
@@ -108,6 +113,5 @@ minimum xs = maximum sort xs
 bestTeams :: (TeamPoint, TeamPoint, TeamPoint, TeamPoint) -> (Time, Time)
 bestTeams ((a, x), (b, y), (c, w), (d, z)) = 
 
-classificados :: Grupo -> [Jogo] -> (Time, Time)
 classificados group games = teamPoints group games  
 -}
